@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
+    auth,
     clerkMiddleware,
     createRouteMatcher
 } from "@clerk/nextjs/server"
