@@ -28,6 +28,7 @@ const SignIn = () => {
   });
 
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
+    alert("Submitting sign-in form...");
     if (!isLoaded) return;
 
     setIsSubmitting(true);
@@ -38,6 +39,8 @@ const SignIn = () => {
         identifier: data.email,
         password: data.password,
       });
+
+      console.log("Sign-in result:", result);
 
       if (result.status === "complete") {
         await setActive({ session: result.createdSessionId });
@@ -68,7 +71,8 @@ const SignIn = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+<form onSubmit={handleSubmit(onSubmit, (err) => console.log("Validation errors:", err))}>
+
         <div>
           <label htmlFor="identifier" className="block text-sm font-medium">
             Email
