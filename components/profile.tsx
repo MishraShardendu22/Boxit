@@ -1,6 +1,7 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import SignOut from "./sign-out"
 
 const Profile = () => {
   const { user } = useUser();
@@ -8,6 +9,7 @@ const Profile = () => {
 
   return (
     <div>
+      <SignOut />
       <h1>Profile</h1>
       <div>Email: {user?.primaryEmailAddress?.emailAddress}</div>
       <div>Verified: {user?.primaryEmailAddress?.verification?.status === "verified" ? "Yes" : "No"}</div>
