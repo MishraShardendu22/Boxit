@@ -1,14 +1,11 @@
-// import { auth } from '@clerk/nextjs/server'
-// import React from 'react'
+import Profile from "@/components/profile"
 
-// const page = () => {
-//   const user = await auth()
-  
-//   return (
-//     <div>
-      
-//     </div>
-//   )
-// }
+const page = () => {
+  return (
+    <div>
+      <Profile /> 
+    </div>
+  )
+}
 
-// export default page
+export default page
